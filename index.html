@@ -5,20 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portfolio — Meyssem SOUSSOU</title>
 
-  <!-- Police sobre (proche CV) -->
+  <!-- Polices web (fallbacks si absentes sur la machine) :
+       - Titres: Libre Baskerville (proche Baskerville)
+       - Texte: (Gill Sans si dispo) + fallback sans-serif -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- 
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
     :root{
+      /* Typo */
+      --font-title: "Libre Baskerville", "Baskerville", "Baskerville Old Face", serif;
+      --font-regular: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+      --font-light: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+
+      /* Couleurs */
       --bg: #ffffff;
       --text: #111111;
       --muted: #555;
       --light: #f4f5f7;
       --border: #e7e7ea;
 
-      /* 👇 Change juste ça pour matcher la couleur de ton CV */
-      --accent: #2563eb;
+      /* 👇 Accent (si tu veux une couleur "texte" lisible, évite une teinte trop claire) */
+      --accent: #E3EBF5;
 
       --radius: 16px;
       --shadow: 0 8px 24px rgba(0,0,0,.06);
@@ -26,12 +35,20 @@
     }
 
     *{ box-sizing: border-box; }
+
     body{
       margin: 0;
-      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+      font-family: var(--font-light);
+      font-weight: 300;
       background: var(--bg);
       color: var(--text);
       line-height: 1.55;
+    }
+
+    /* Texte courant en "Gill Sans Light" (simulé via font-weight) */
+    p, li{
+      font-family: var(--font-light);
+      font-weight: 300;
     }
 
     a{ color: var(--accent); text-decoration: none; }
@@ -44,19 +61,23 @@
     }
 
     /* Header */
-    header{
-      padding: 18px 0 10px;
-    }
+    header{ padding: 18px 0 10px; }
+
     .name{
       font-size: clamp(34px, 4vw, 52px);
       line-height: 1.05;
       margin: 0;
       letter-spacing: -0.02em;
+      font-family: var(--font-regular);
+      font-weight: 500;
     }
+
     .subtitle{
       margin: 10px 0 0;
       color: var(--muted);
       font-size: 16px;
+      font-family: var(--font-light);
+      font-weight: 300;
     }
 
     .topbar{
@@ -66,6 +87,7 @@
       gap: 10px;
       align-items: center;
     }
+
     .pill{
       display: inline-flex;
       gap: 8px;
@@ -76,8 +98,10 @@
       border: 1px solid var(--border);
       font-size: 13px;
       color: #222;
+      font-family: var(--font-regular);
+      font-weight: 400;
     }
-    .pill b{ font-weight: 700; }
+    .pill b{ font-weight: 600; }
 
     nav{
       position: sticky;
@@ -87,6 +111,7 @@
       border-bottom: 1px solid var(--border);
       z-index: 50;
     }
+
     .nav-inner{
       max-width: var(--max);
       margin: 0 auto;
@@ -95,13 +120,17 @@
       flex-wrap: wrap;
       gap: 10px;
     }
+
     .nav-inner a{
       font-size: 13px;
       color: #222;
       padding: 8px 10px;
       border-radius: 10px;
       border: 1px solid transparent;
+      font-family: var(--font-regular);
+      font-weight: 400;
     }
+
     .nav-inner a:hover{
       border-color: var(--border);
       background: var(--light);
@@ -117,13 +146,35 @@
       box-shadow: var(--shadow);
       background: #fff;
     }
+
+    /* TITRES (Baskerville semi-gras) */
     h2{
       margin: 0 0 12px;
+      font-family: var(--font-title);
+      font-weight: 700; /* semi-gras/gras côté web */
       font-size: 14px;
       letter-spacing: .14em;
       text-transform: uppercase;
       color: var(--accent);
     }
+
+    /* SOUS-TITRES (Gill Sans regular) */
+    h3{
+      font-family: var(--font-regular);
+      font-weight: 400;
+      margin: 0 0 6px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .meta{
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-size: 13px;
+      font-family: var(--font-regular);
+      font-weight: 400;
+    }
+
     p{ margin: 0 0 10px; }
 
     .grid-2{
@@ -142,16 +193,7 @@
       border-radius: 14px;
       background: #fff;
     }
-    .item h3{
-      margin: 0 0 6px;
-      font-size: 16px;
-      letter-spacing: -0.01em;
-    }
-    .meta{
-      margin: 0 0 8px;
-      color: var(--muted);
-      font-size: 13px;
-    }
+
     ul{
       margin: 10px 0 0 18px;
       padding: 0;
@@ -171,6 +213,8 @@
       border: 1px solid var(--border);
       background: var(--light);
       font-size: 13px;
+      font-family: var(--font-regular);
+      font-weight: 400;
     }
 
     footer{
@@ -178,12 +222,13 @@
       color: var(--muted);
       font-size: 13px;
       text-align: center;
+      font-family: var(--font-light);
+      font-weight: 300;
     }
   </style>
 </head>
 
 <body>
-
   <nav>
     <div class="nav-inner">
       <a href="#profil">Profil</a>
@@ -376,9 +421,6 @@
         🔗 <a href="#" target="_blank" rel="noreferrer">LinkedIn : meyssem-soussou</a><br>
         📄 CV : <a href="#" target="_blank" rel="noreferrer">Télécharger</a>
       </p>
-      <p style="color:var(--muted); font-size:13px; margin-top:10px;">
-        
-      </p>
     </section>
 
     <footer>
@@ -391,4 +433,3 @@
   </script>
 </body>
 </html>
-
