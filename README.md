@@ -1,53 +1,396 @@
 # mxyssxm.github.io
 
-<div align="center">
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio — Meyssem SOUSSOU</title>
 
-<h1>👋 Prénom Nom</h1>
-<p>
-Étudiant·e en école d’ingénieur — <b>Systèmes informatiques embarqués</b><br>
-À la recherche d’un <b>stage</b> en développement embarqué
-</p>
+  <!-- Police sobre (proche CV) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-<hr width="60%">
+  <style>
+    :root{
+      --bg: #ffffff;
+      --text: #111111;
+      --muted: #555;
+      --light: #f4f5f7;
+      --border: #e7e7ea;
 
-<h2>🛠️ Compétences</h2>
-<p>
-C / C++ · STM32 · Arduino · ESP32 · Linux embarqué · FreeRTOS · UART · I2C · SPI · Git
-</p>
+      /* 👇 Change juste ça pour matcher la couleur de ton CV */
+      --accent: #2563eb;
 
-<hr width="60%">
+      --radius: 16px;
+      --shadow: 0 8px 24px rgba(0,0,0,.06);
+      --max: 980px;
+    }
 
-<h2>📂 Projets</h2>
+    *{ box-sizing: border-box; }
+    body{
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
 
-<table>
-<tr>
-<td width="33%">
-<h3>📟 Système de mesure</h3>
-<p>Capteur de température sur STM32 avec envoi UART.</p>
-<a href="https://github.com/tonpseudo/projet1">Voir le projet</a>
-</td>
+    a{ color: var(--accent); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
 
-<td width="33%">
-<h3>🚗 Robot autonome</h3>
-<p>Robot éviteur d’obstacles avec Arduino et capteurs ultrasons.</p>
-<a href="https://github.com/tonpseudo/projet2">Voir le projet</a>
-</td>
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 18px 72px;
+    }
 
-<td width="33%">
-<h3>📡 Station IoT</h3>
-<p>Collecte de données via ESP32 et transmission WiFi.</p>
-<a href="https://github.com/tonpseudo/projet3">Voir le projet</a>
-</td>
-</tr>
-</table>
+    /* Header */
+    header{
+      padding: 18px 0 10px;
+    }
+    .name{
+      font-size: clamp(34px, 4vw, 52px);
+      line-height: 1.05;
+      margin: 0;
+      letter-spacing: -0.02em;
+    }
+    .subtitle{
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
 
-<hr width="60%">
+    .topbar{
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+    .pill{
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--light);
+      border: 1px solid var(--border);
+      font-size: 13px;
+      color: #222;
+    }
+    .pill b{ font-weight: 700; }
 
-<h2>📫 Me contacter</h2>
-<p>
-Email : prenom.nom@email.com<br>
-LinkedIn : <a href="https://linkedin.com/in/tonprofil">tonprofil</a><br>
-GitHub : <a href="https://github.com/tonpseudo">tonpseudo</a>
-</p>
+    nav{
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      z-index: 50;
+    }
+    .nav-inner{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 10px 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .nav-inner a{
+      font-size: 13px;
+      color: #222;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid transparent;
+    }
+    .nav-inner a:hover{
+      border-color: var(--border);
+      background: var(--light);
+      text-decoration: none;
+    }
 
-</div>
+    /* Sections */
+    section{
+      margin-top: 22px;
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      background: #fff;
+    }
+    h2{
+      margin: 0 0 12px;
+      font-size: 14px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    p{ margin: 0 0 10px; }
+
+    .grid-2{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    @media (max-width: 860px){
+      .grid-2{ grid-template-columns: 1fr; }
+    }
+
+    /* Items */
+    .item{
+      padding: 14px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #fff;
+    }
+    .item h3{
+      margin: 0 0 6px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .meta{
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    ul{
+      margin: 10px 0 0 18px;
+      padding: 0;
+    }
+    li{ margin: 6px 0; }
+
+    /* Skills */
+    .tags{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .tag{
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--light);
+      font-size: 13px;
+    }
+
+    footer{
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="#profil">Profil</a>
+      <a href="#scolarite">Scolarité</a>
+      <a href="#projets">Projets</a>
+      <a href="#experience">Expérience</a>
+      <a href="#interets">Centres d’intérêt</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <div class="wrap">
+    <header>
+      <h1 class="name">Meyssem <span style="color:var(--accent)">SOUSSOU</span></h1>
+      <p class="subtitle">Étudiante en école d’ingénieur — Systèmes informatiques embarqués</p>
+
+      <div class="topbar">
+        <span class="pill">📍 <b>Paris</b>, France</span>
+        <span class="pill">📧 <a href="mailto:meyssem.soussou@gmail.com">meyssem.soussou@gmail.com</a></span>
+        <span class="pill">🐙 <a href="https://github.com/mxyssxm" target="_blank" rel="noreferrer">github.com/mxyssxm</a></span>
+        <span class="pill">🔗 <a href="#" target="_blank" rel="noreferrer">LinkedIn : meyssem-soussou</a></span>
+      </div>
+    </header>
+
+    <!-- PROFIL -->
+    <section id="profil">
+      <h2>Profil</h2>
+      <p>
+        Étudiante en systèmes informatiques embarqués à l’EIDD, je recherche un stage de 2 mois entre juin et août
+        pour mettre en pratique mes compétences. Motivée et rigoureuse, je souhaite m’impliquer pleinement dans les
+        missions confiées.
+      </p>
+
+      <div class="grid-2" style="margin-top:14px;">
+        <div class="item">
+          <h3>Compétences techniques</h3>
+          <div class="tags">
+            <span class="tag">C</span>
+            <span class="tag">Python</span>
+            <span class="tag">Java</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Linux</span>
+            <span class="tag">Logisim</span>
+            <span class="tag">LC-3</span>
+            <span class="tag">Octave</span>
+            <span class="tag">Matlab</span>
+            <span class="tag">LTSpice</span>
+            <span class="tag">Anglais (C1)</span>
+            <span class="tag">Espagnol (B2)</span>
+          </div>
+        </div>
+
+        <div class="item">
+          <h3>Compétences comportementales</h3>
+          <div class="tags">
+            <span class="tag">Ambitieuse</span>
+            <span class="tag">Attentionnée</span>
+            <span class="tag">Esprit d’équipe</span>
+            <span class="tag">Patiente</span>
+            <span class="tag">Rigoureuse</span>
+            <span class="tag">Soignée</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCOLARITÉ -->
+    <section id="scolarite">
+      <h2>Scolarité</h2>
+
+      <div class="item">
+        <h3>École d’ingénieur — EIDD (Paris 13e)</h3>
+        <p class="meta">2024 — présent · Spécialité : systèmes informatiques embarqués</p>
+        <ul>
+          <li>Connaissances solides en programmation et en algorithme.</li>
+        </ul>
+      </div>
+
+      <div class="item" style="margin-top:12px;">
+        <h3>Classe préparatoire — Jacques Decour (Paris 9e)</h3>
+        <p class="meta">2021 — 2024</p>
+        <ul>
+          <li>Parcours de 3 ans développant une solide maîtrise des fondamentaux scientifiques.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PROJETS -->
+    <section id="projets">
+      <h2>Projets</h2>
+
+      <div class="grid-2">
+        <div class="item">
+          <h3>Conception d’un microprocesseur</h3>
+          <p class="meta">Architecture LC-3 · 2025</p>
+          <ul>
+            <li>Conception et implémentation d’un processeur LC-3 avec extensions matérielles sous Logisim.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <h3>Gestion de classe</h3>
+          <p class="meta">Application Java · 2025</p>
+          <ul>
+            <li>Développement d’une application de gestion de classe (plan interactif + gestion des élèves).</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <h3>NUMERI</h3>
+          <p class="meta">Programmation Java · 2025</p>
+          <ul>
+            <li>Codage complet d’un jeu via l’implémentation de plusieurs classes en Java.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <h3>Anneaux de Saturne</h3>
+          <p class="meta">Modélisation · C + Python · 2025</p>
+          <ul>
+            <li>Simulation des mouvements d’astéroïdes en C puis tracé des trajectoires en Python.</li>
+          </ul>
+        </div>
+
+        <div class="item" style="grid-column: 1 / -1;">
+          <h3>Moteur de Sterling</h3>
+          <p class="meta">TIPE · 2023</p>
+          <ul>
+            <li>Conception et implémentation d’un moteur de Sterling pour simuler des cycles thermodynamiques.</li>
+          </ul>
+        </div>
+      </div>
+
+      <p style="margin-top:12px; color:var(--muted); font-size:13px;">
+        Astuce : ajoute un lien GitHub par projet (et 1 capture/diagramme si possible) pour maximiser l’impact.
+      </p>
+    </section>
+
+    <!-- EXPÉRIENCE -->
+    <section id="experience">
+      <h2>Expérience professionnelle</h2>
+
+      <div class="item">
+        <h3>Stage — Animation IA (WAZZA, Paris)</h3>
+        <p class="meta">2025</p>
+        <ul>
+          <li>Construction d’un modèle informatique générant des vidéos animées à partir d’un prompt OpenAI.</li>
+        </ul>
+      </div>
+
+      <div class="item" style="margin-top:12px;">
+        <h3>Cours particuliers Maths & Physique (Anacours, Île-de-France)</h3>
+        <p class="meta">2024</p>
+        <ul>
+          <li>Aide et préparation aux devoirs de maths et de physique du collège au baccalauréat.</li>
+        </ul>
+      </div>
+
+      <div class="item" style="margin-top:12px;">
+        <h3>Stage — Logistique (Air France Industrie, Massy-Palaiseau)</h3>
+        <p class="meta">2018</p>
+        <ul>
+          <li>Découverte de la logistique de maintenance et de l’environnement industriel aéronautique.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CENTRES D’INTÉRÊT -->
+    <section id="interets">
+      <h2>Centres d’intérêt</h2>
+      <div class="tags">
+        <span class="tag">Dessin</span>
+        <span class="tag">Musique</span>
+        <span class="tag">F1</span>
+        <span class="tag">Astronomie</span>
+        <span class="tag">Linux</span>
+        <span class="tag">Manga / Anime</span>
+        <span class="tag">Chant</span>
+        <span class="tag">Football</span>
+        <span class="tag">Piano</span>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        📧 <a href="mailto:meyssem.soussou@gmail.com">meyssem.soussou@gmail.com</a><br>
+        🐙 <a href="https://github.com/mxyssxm" target="_blank" rel="noreferrer">github.com/mxyssxm</a><br>
+        🔗 <a href="#" target="_blank" rel="noreferrer">LinkedIn : meyssem-soussou</a><br>
+        📄 CV : <a href="#" target="_blank" rel="noreferrer">Télécharger</a>
+      </p>
+      <p style="color:var(--muted); font-size:13px; margin-top:10px;">
+        (Tu peux ajouter ton CV PDF dans le repo et remplacer le lien ci-dessus.)
+      </p>
+    </section>
+
+    <footer>
+      © <span id="y"></span> Meyssem SOUSSOU · GitHub Pages
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
