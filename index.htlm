@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Portfolio – Meyssem SOUSSOU</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body style="font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 20px;">
+
+  <h1>👩‍💻 Eve Lin</h1>
+  <p>
+    Étudiante en école d’ingénieur — <b>Systèmes informatiques embarqués</b><br>
+    À la recherche d’un <b>stage</b>
+  </p>
+
+  <h2>🔧 Compétences</h2>
+  <p>C, C++, STM32, Arduino, ESP32, Linux embarqué, FreeRTOS, UART, I2C, SPI, Git</p>
+
+  <h2>📂 Projets</h2>
+  <ul>
+    <li><b>Système de mesure STM32</b> – Capteur de température + UART</li>
+    <li><b>Robot Arduino</b> – Navigation et évitement d’obstacles</li>
+    <li><b>Station IoT ESP32</b> – Envoi de données via WiFi</li>
+  </ul>
+
+  <h2>📫 Contact</h2>
+  <p>
+    Email : eve.lin@email.com<br>
+    GitHub : <a href="https://github.com/mxyssxm">mxyssxm</a>
+  </p>
+
+</body>
+</html>
