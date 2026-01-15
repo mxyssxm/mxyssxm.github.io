@@ -5,51 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portfolio — Meyssem SOUSSOU</title>
 
-  <!-- Titres: Libre Baskerville (proche Baskerville) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      /* Typo */
       --font-title: "Libre Baskerville", "Baskerville", "Baskerville Old Face", serif;
       --font-regular: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
       --font-light: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 
-      /* Couleurs */
       --bg: #E3EBF5;
       --text: #111111;
       --muted: #555;
-      --light: #f4f5f7;
-      --border: #e7e7ea;
-
-      /* Accent */
       --accent: #77B0DA;
 
-      --radius: 16px;
-      --shadow: 0 8px 24px rgba(0,0,0,.06);
       --max: 980px;
     }
 
     *{ box-sizing: border-box; }
 
-    html, body{
-      height: 100%;
-      background: var(--bg);
-    }
+    html,body{ background: var(--bg); margin:0; }
 
     body{
-      margin: 0;
       font-family: var(--font-light);
       font-weight: 300;
       color: var(--text);
       line-height: 1.55;
-    }
-
-    p, li{
-      font-family: var(--font-light);
-      font-weight: 300;
     }
 
     a{ color: var(--accent); text-decoration: none; }
@@ -57,439 +39,151 @@
 
     .wrap{
       max-width: var(--max);
-      margin: 0 auto;
+      margin: auto;
       padding: 28px 18px 72px;
     }
 
-    /* Header */
-    header{ padding: 18px 0 10px; }
+    header{ padding-bottom:20px; }
 
     .name{
-      font-size: clamp(34px, 4vw, 52px);
-      line-height: 1.05;
-      margin: 0;
-      letter-spacing: -0.02em;
+      font-size: clamp(34px,4vw,52px);
       font-family: var(--font-regular);
-      font-weight: 500;
+      margin:0;
     }
 
-    .subtitle{
-      margin: 10px 0 0;
-      color: var(--muted);
-      font-size: 19px;
-      font-family: var(--font-light);
-      font-weight: 300;
-    }
-
-    .topbar{
-      margin-top: 18px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-    }
-
-    .pill{
-      display: inline-flex;
-      gap: 8px;
-      align-items: center;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: transparent;
-      border: 1px solid rgba(17,17,17,.12);
-      font-size: 13px;
-      color: #222;
-      font-family: var(--font-regular);
-      font-weight: 400;
-    }
-    .pill b{ font-weight: 600; }
+    .subtitle{ color:var(--muted); font-size:19px; }
 
     nav{
       position: sticky;
-      top: 0;
+      top:0;
       background: var(--bg);
-      border-bottom: 1px solid rgba(17,17,17,.10);
-      z-index: 50;
+      border-bottom:1px solid rgba(0,0,0,.1);
+      z-index:10;
     }
 
     .nav-inner{
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 10px 18px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+      max-width:var(--max);
+      margin:auto;
+      padding:10px 18px;
+      display:flex;
+      gap:12px;
     }
 
-    .nav-inner a{
-      font-size: 13px;
-      color: #222;
-      padding: 8px 10px;
-      border-radius: 10px;
-      border: 1px solid transparent;
-      font-family: var(--font-regular);
-      font-weight: 400;
-    }
-
-    .nav-inner a:hover{
-      border-color: rgba(17,17,17,.12);
-      background: transparent;
-      text-decoration: none;
-    }
-
-    /* Sections */
     section{
-      margin-top: 28px;
-      padding: 26px 28px;
-      background: rgba(255,255,255,0.85);
-      border-radius: 24px;
-      box-shadow: 0 20px 40px rgba(0,0,0,.08);
+      background: rgba(255,255,255,.9);
+      border-radius:24px;
+      padding:26px 28px;
+      margin-top:28px;
+      box-shadow:0 20px 40px rgba(0,0,0,.08);
     }
 
-    /* TITRES (Baskerville semi-gras) */
     h2{
-      margin: 0 0 18px;
       font-family: var(--font-title);
-      font-weight: 700;
-      font-size: 16px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--accent);
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      font-size:16px;
+      color:var(--accent);
     }
 
-    /* SOUS-TITRES (Gill Sans regular) */
     h3{
       font-family: var(--font-regular);
-      font-weight: 400;
-      margin: 0 0 6px;
-      font-size: 16px;
-      letter-spacing: -0.01em;
+      font-size:16px;
+      margin-bottom:6px;
     }
 
-    .meta{
-      margin: 0 0 8px;
-      color: var(--muted);
-      font-size: 13px;
-      font-family: var(--font-regular);
-      font-weight: 400;
+    h3 a{
+      color:var(--accent);
+      font-weight:500;
     }
 
-    p{ margin: 0 0 10px; }
+    .meta{ color:var(--muted); font-size:13px; }
 
     .grid-2{
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
     }
-    @media (max-width: 860px){
-      .grid-2{ grid-template-columns: 1fr; }
+
+    @media(max-width:800px){
+      .grid-2{ grid-template-columns:1fr; }
     }
 
     .item{
-      padding: 16px 18px;
-      background: #ffffff;
-      border-radius: 18px;
-      box-shadow: 0 8px 20px rgba(0,0,0,.06);
-    }
-
-    ul{
-      margin: 10px 0 0 18px;
-      padding: 0;
-    }
-    li{ margin: 6px 0; }
-
-    .tags{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 10px;
-    }
-
-    .tag{
-      padding: 7px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(0,0,0,.08);
-      background: transparent;
-      font-size: 13px;
-      font-family: var(--font-regular);
-      font-weight: 400;
-      color: var(--text);
-    }
-
-    footer{
-      margin-top: 18px;
-      color: var(--muted);
-      font-size: 13px;
-      text-align: center;
-      font-family: var(--font-light);
-      font-weight: 300;
+      background:#fff;
+      padding:16px 18px;
+      border-radius:18px;
+      box-shadow:0 8px 20px rgba(0,0,0,.06);
     }
 
     .project-img{
-      width: 100%;
-      max-width: 720px;
-      display: block;
-      margin: 18px auto 6px;
-      border-radius: 14px;
-      box-shadow: 0 8px 24px rgba(0,0,0,.15);
+      width:100%;
+      max-width:720px;
+      display:block;
+      margin:18px auto 6px;
+      border-radius:14px;
+      box-shadow:0 8px 24px rgba(0,0,0,.15);
     }
   </style>
 </head>
 
 <body>
-  <nav>
-    <div class="nav-inner">
-      <a href="#profil">Profil</a>
-      <a href="#scolarite">Scolarité</a>
-      <a href="#projets">Projets</a>
-      <a href="#experience">Expérience</a>
-      <a href="#interets">Centres d’intérêt</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
+<div class="wrap">
 
-  <div class="wrap">
-    <header>
-      <h1 class="name">MEYSSEM <span style="color:var(--accent)">SOUSSOU</span></h1>
-      <p class="subtitle">Étudiante en école d’ingénieur — Systèmes informatiques embarqués</p>
+<header>
+  <h1 class="name">MEYSSEM <span style="color:var(--accent)">SOUSSOU</span></h1>
+  <p class="subtitle">Étudiante en école d’ingénieur — Systèmes informatiques embarqués</p>
+</header>
 
-      <div class="topbar">
-        <span class="pill">📍 <b>Paris</b>, France</span>
-        <span class="pill">✉️ <a href="mailto:meyssem.soussou@gmail.com">meyssem.soussou@gmail.com</a></span>
-        <span class="pill">👾 <a href="https://github.com/mxyssxm" target="_blank" rel="noreferrer">github.com/mxyssxm</a></span>
-        <span class="pill">🔗 <a href="#" target="_blank" rel="noreferrer">LinkedIn : meyssem-soussou</a></span>
-      </div>
-    </header>
+<section id="projets">
+<h2>Projets</h2>
 
-    <!-- PROFIL -->
-    <section id="profil">
-      <h2>Profil</h2>
-      <p>
-        Étudiante en systèmes informatiques embarqués à l’EIDD, je recherche un stage de 2 mois entre juin et août
-        pour mettre en pratique mes compétences. Motivée et rigoureuse, je souhaite m’impliquer pleinement dans les
-        missions confiées.
-      </p>
+<div class="grid-2">
 
-      <div class="grid-2" style="margin-top:14px;">
-        <div class="item">
-          <h3>Compétences techniques</h3>
-          <div class="tags">
-            <span class="tag">C</span>
-            <span class="tag">Python</span>
-            <span class="tag">Java</span>
-            <span class="tag">SQL</span>
-            <span class="tag">Linux</span>
-            <span class="tag">Logisim</span>
-            <span class="tag">LC-3</span>
-            <span class="tag">Octave</span>
-            <span class="tag">Matlab</span>
-            <span class="tag">LTSpice</span>
-            <span class="tag">Anglais (C1)</span>
-            <span class="tag">Espagnol (B2)</span>
-          </div>
-        </div>
+<div class="item">
+<h3>CONCEPTION D'UN MICROPROCESSEUR</h3>
+<p class="meta">LC-3 — 2025</p>
+<p>Architecture complète du processeur LC-3, datapath et unité de contrôle.</p>
 
-        <div class="item">
-          <h3>Compétences comportementales</h3>
-          <div class="tags">
-            <span class="tag">Ambitieuse</span>
-            <span class="tag">Attentionnée</span>
-            <span class="tag">Esprit d’équipe</span>
-            <span class="tag">Patiente</span>
-            <span class="tag">Rigoureuse</span>
-            <span class="tag">Soignée</span>
-          </div>
-        </div>
-      </div>
-    </section>
+<img src="assets/projets/lc3-architecture.PNG?v=1"
+     onerror="this.onerror=null;this.src='assets/projets/lc3-architecture.png?v=1';"
+     class="project-img">
+</div>
 
-    <!-- SCOLARITÉ -->
-    <section id="scolarite">
-      <h2>Scolarité</h2>
+<div class="item">
+<h3>GESTION DE CLASSE</h3>
+<p class="meta">Java — 2025</p>
+<p>Application Swing avec gestion des élèves, groupes et fichiers CSV.</p>
 
-      <div class="item">
-        <h3>ÉCOLE D'INGÉNIEUR — EIDD</h3>
-        <p class="meta">Paris 13e, 2024 - présent | Spécialité : systèmes informatiques embarqués</p>
-        <ul>
-          <li>Connaissances solides en programmation et en algorithme.</li>
-        </ul>
-      </div>
+<img src="assets/projets/gestion.PNG?v=1" class="project-img">
+</div>
 
-      <div class="item" style="margin-top:12px;">
-        <h3>CLASSE PRÉPARATOIRE — Jacques Decour</h3>
-        <p class="meta">Paris 9e, 2021 - 2024</p>
-        <ul>
-          <li>Parcours de 3 ans développant une solide maîtrise des fondamentaux scientifiques.</li>
-        </ul>
-      </div>
-    </section>
+<div class="item">
+<h3>NUMERI</h3>
+<p class="meta">Java MVC — 2025</p>
+<p>Jeu de plateau MVC avec règles avancées et interface Swing.</p>
+</div>
 
-    <!-- PROJETS -->
-    <section id="projets">
-      <h2>Projets</h2>
+<div class="item">
+<h3>
+<a href="https://github.com/mxyssxm/anneaux_de_saturne" target="_blank">
+ANNEAUX DE SATURNE
+</a>
+</h3>
+<p class="meta">C + Python — 2025</p>
+<p>Simulation d’astéroïdes et visualisation des trajectoires.</p>
 
-      <div class="grid-2">
-        <div class="item">
-          <h3>CONCEPTION D'UN MICROPROCESSEUR</h3>
-          <p class="meta">Architecture LC-3 - 2025</p>
-          <p>
-            Au cours de ce projet, j’ai appris à concevoir et comprendre en profondeur l’architecture interne d’un processeur LC-3, en reliant concrètement le datapath, l’unité de contrôle et la mémoire.
-          </p>
-          <p>
-            J’ai développé une meilleure maîtrise de l’assembleur LC-3, notamment l’écriture, le débogage et la validation de programmes bas niveau comme index, strcpy et strncpy.
-          </p>
-          <p>
-            Ce travail m’a permis de comprendre le rôle précis des signaux de contrôle, du décodage des instructions et de la gestion des registres lors de l’exécution d’un programme.
-          </p>
-          <p>
-            Enfin, j’ai renforcé ma capacité à analyser des erreurs matérielles et logicielles dans Logisim, et à tester méthodiquement un système matériel–logiciel complet.
-          </p>
-          <img
-            src="assets/projets/lc3-architecture.PNG?v=1"
-            alt="Architecture du microprocesseur LC-3"
-            class="project-img"
-            onerror="this.onerror=null; this.src='assets/projets/lc3-architecture.png?v=1';"
-          />
+<img src="assets/projets/saturne.PNG?v=1"
+     onerror="this.onerror=null;this.src='assets/projets/saturne.png?v=1';"
+     class="project-img">
+</div>
 
-        </div>
+</div>
+</section>
 
-        <div class="item">
-          <h3>GESTION DE CLASSE</h3>
-          <p class="meta">Application Java - 2025</p>
-          <p>
-            Ce projet m’a permis de concevoir une application Java complète, depuis la modélisation UML jusqu’à l’interface graphique avec Swing.
-          </p>
-          <p>
-            J’y ai appris à structurer un programme en plusieurs classes et à gérer des données dynamiques comme les élèves, les groupes et le plan de classe.
-          </p>
-          <p>
-            J’ai également travaillé sur la persistance des données grâce à l’import et l’export de fichiers CSV.
-          </p>
-          <p>
-            Ce projet m’a permis de progresser en programmation orientée objet, en interfaces graphiques et en organisation du code.
-          </p>
-          <img
-            src="assets/projets/gestion.PNG?v=1"
-            alt="Gestion de classe"
-            class="project-img"
-            onerror="this.onerror=null; this.src='assets/projets/gestion.PNG?v=1';"
-          >
-        </div>
+<footer style="text-align:center;margin-top:30px;color:#555;">
+© Meyssem SOUSSOU
+</footer>
 
-        <div class="item">
-          <h3>NUMERI</h3>
-          <p class="meta">Programmation Java - 2025</p>
-          <p>
-            Dans le cadre du projet Numeri, j’ai développé un jeu de société en Java en appliquant une architecture MVC (Modèle-Vue-Contrôleur). Le but était de reproduire les mécaniques d’un jeu de plateau avec plusieurs joueurs, des pions, un système de score, et des variantes activables comme les cases pièges, la prison ou le dé à 7 faces.
-          </p>
-          <p>
-            J’ai conçu la logique du jeu (métier), l’interface graphique en Java Swing, et les contrôleurs qui relient les actions utilisateur à la logique interne. Ce projet m’a permis de structurer un programme complet, de travailler avec des interfaces graphiques interactives, et d’implémenter des règles avancées de manière modulaire.
-          </p>
-          <p>
-            Il m’a aussi appris à organiser mon code proprement, à penser en termes de réutilisabilité, et à anticiper les besoins futurs grâce à une conception extensible.
-          </p>
-        </div>
-
-        <div class="item">
-          <h3>
-            <a href="https://github.com/mxyssxm/anneaux_de_saturne" target="_blank" rel="noreferrer">
-            ANNEAUX DE SATURNE
-            </a>
-          </h3>
-          <p class="meta">Modélisation, C + Python - 2025</p>
-          <p>
-            Dans le cadre de ce projet, j’ai développé plusieurs programmes en langage C afin de simuler le mouvement d’astéroïdes gravitant autour de Saturne, avec ou sans l’influence gravitationnelle d’un satellite. J’ai modélisé les forces selon la loi de la gravitation universelle, et utilisé la méthode de Runge-Kutta 4 pour garantir la stabilité et la précision des trajectoires. J’ai également étudié l’impact des perturbations orbitales, en comparant différents cas (orbites idéales, perturbées, aléatoires) et en visualisant les résultats avec Python (matplotlib).
-          </p>
-          <p>
-            Ce projet m’a permis de consolider mes compétences en programmation scientifique, en modélisation physique et en analyse de résultats. Il m’a aussi appris à valider un modèle par comparaison visuelle et numérique, et à adapter mes outils pour rendre les effets physiques observables de manière claire.
-          </p>
-
-          <!-- Image Saturne (avec fallback + anti-cache) -->
-          <img
-            src="assets/projets/saturne.PNG?v=1"
-            alt="Simulation des anneaux de Saturne"
-            class="project-img"
-            onerror="this.onerror=null; this.src='assets/projets/saturne.png?v=1';"
-          >
-        </div>
-
-        <div class="item" style="grid-column: 1 / -1;">
-          <h3>MOTEUR DE STERLING</h3>
-          <p class="meta">TIPE - 2023</p>
-          <ul>
-            <li>Conception et implémentation d’un moteur de Sterling pour simuler des cycles thermodynamiques.</li>
-          </ul>
-        </div>
-      </div>
-
-      <p style="margin-top:12px; color:var(--muted); font-size:13px;">
-        (Les projets peuvent être trouvés sur les liens des titres)
-      </p>
-    </section>
-
-    <!-- EXPÉRIENCE -->
-    <section id="experience">
-      <h2>Expérience professionnelle</h2>
-
-      <div class="item">
-        <h3>STAGE - ANIMATION AI</h3>
-        <p class="meta">WAZZA, Paris - 2025</p>
-        <ul>
-          <li>Construction d’un modèle informatique générant des vidéos animées à partir d’un prompt OpenAI.</li>
-        </ul>
-      </div>
-
-      <div class="item" style="margin-top:12px;">
-        <h3>COURS PARTICULIERS</h3>
-        <p class="meta">Anacours, Île-de-France - 2024</p>
-        <ul>
-          <li>Aide et préparation aux devoirs de maths et de physique du collège au baccalauréat.</li>
-        </ul>
-      </div>
-
-      <div class="item" style="margin-top:12px;">
-        <h3>STAGE - LOGISITQUE</h3>
-        <p class="meta">Air France Industrie, Massy-Palaiseau - 2018</p>
-        <ul>
-          <li>Découverte de la logistique de maintenance et de l’environnement industriel aéronautique.</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- CENTRES D’INTÉRÊT -->
-    <section id="interets">
-      <h2>Centres d’intérêt</h2>
-      <div class="tags">
-        <span class="tag">Dessin</span>
-        <span class="tag">Musique</span>
-        <span class="tag">F1</span>
-        <span class="tag">Astronomie</span>
-        <span class="tag">Linux</span>
-        <span class="tag">Manga / Anime</span>
-        <span class="tag">Chant</span>
-        <span class="tag">Football</span>
-        <span class="tag">Piano</span>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>
-        ✉️ <a href="mailto:meyssem.soussou@gmail.com">meyssem.soussou@gmail.com</a><br>
-        👾 <a href="https://github.com/mxyssxm" target="_blank" rel="noreferrer">github.com/mxyssxm</a><br>
-        🔗 <a href="#" target="_blank" rel="noreferrer">LinkedIn : meyssem-soussou</a><br>
-        📄 CV : <a href="#" target="_blank" rel="noreferrer">Télécharger</a>
-      </p>
-    </section>
-
-    <footer>
-      © <span id="y"></span> Meyssem SOUSSOU · GitHub Pages
-    </footer>
-  </div>
-
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+</div>
 </body>
 </html>
