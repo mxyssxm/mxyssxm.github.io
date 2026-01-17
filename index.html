@@ -417,20 +417,34 @@
           >
         </div>
 
-        <div class="item">
-          <h3>NUMERI</h3>
-          <p class="meta">Programmation Java - 2025</p>
+        <div class="item" style="grid-column: 1 / -1;">
+          <h3>
+            <a href="https://github.com/mxyssxm/real-time-multicore-rpi/tree/main" target="_blank" rel="noreferrer">
+            ORDONNANCEMENT TEMPS RÉEL MULTICŒUR
+            </a>
+          </h3>
+          <p class="meta">Implémentation sur Raspberry Pi - 2025</p>
           <p>
-            Dans le cadre du projet Numeri, j’ai développé un jeu de société en Java en appliquant une architecture MVC (Modèle-Vue-Contrôleur). Le but était de reproduire les mécaniques d’un jeu de plateau avec plusieurs joueurs, des pions, un système de score, et des variantes activables comme les cases pièges, la prison ou le dé à 7 faces.
+            Dans ce projet, j’ai conçu et implémenté un système temps réel <em>bare-metal</em> sur Raspberry Pi (ARM Cortex-A53), en exploitant l’exécution multicœur sans système d’exploitation.
           </p>
-          <p>
-            J’ai conçu la logique du jeu (métier), l’interface graphique en Java Swing, et les contrôleurs qui relient les actions utilisateur à la logique interne. Ce projet m’a permis de structurer un programme complet, de travailler avec des interfaces graphiques interactives, et d’implémenter des règles avancées de manière modulaire.
-          </p>
-          <p>
-            Il m’a aussi appris à organiser mon code proprement, à penser en termes de réutilisabilité, et à anticiper les besoins futurs grâce à une conception extensible.
-          </p>
-        </div>
 
+          <p>
+            J’ai d’abord mis en place un environnement d’exécution bas niveau (initialisation matérielle, communication inter-cœurs, synchronisation) avant de développer et intégrer un ordonnanceur temps réel généré avec Heptagon/BZR. Le projet couvre à la fois la simulation sur PC pour valider le comportement temporel des tâches, puis le déploiement sur matériel réel, en adaptant le code aux contraintes de l’architecture ARM.
+          </p>
+
+          <p>
+            Il m’a permis d’approfondir la compréhension du temps réel, de la programmation concurrente, de la synchronisation multicœur et du lien entre modélisation formelle et implémentation bas niveau. Le projet a été réalisé en collaboration avec un camarade, en partageant la conception, le débogage et la validation sur carte.
+          </p>
+
+        </div>
+        <img
+            src="assets/projets/raspberryPi.PNG?v=1"
+            alt="Gestion de classe"
+            class="project-img"
+            onerror="this.onerror=null; this.src='assets/projets/raspberryPi.PNG?v=1';"
+          >
+
+        
         <div class="item">
           <h3>
             <a href="https://github.com/mxyssxm/anneaux_de_saturne" target="_blank" rel="noreferrer">
@@ -453,26 +467,19 @@
             onerror="this.onerror=null; this.src='assets/projets/saturne.png?v=1';"
           >
         </div>
-
-        <div class="item" style="grid-column: 1 / -1;">
-          <h3>
-            <a href="https://github.com/mxyssxm/real-time-multicore-rpi/tree/main" target="_blank" rel="noreferrer">
-            ORDONNANCEMENT TEMPS RÉEL MULTICŒUR
-            </a>
-          </h3>
-          <p class="meta">TIPE - 2023</p>
+        
+        <div class="item">
+          <h3>NUMERI</h3>
+          <p class="meta">Programmation Java - 2025</p>
           <p>
-            Dans ce projet, j’ai conçu et implémenté un système temps réel <em>bare-metal</em> sur Raspberry Pi (ARM Cortex-A53), en exploitant l’exécution multicœur sans système d’exploitation.
+            Dans le cadre du projet Numeri, j’ai développé un jeu de société en Java en appliquant une architecture MVC (Modèle-Vue-Contrôleur). Le but était de reproduire les mécaniques d’un jeu de plateau avec plusieurs joueurs, des pions, un système de score, et des variantes activables comme les cases pièges, la prison ou le dé à 7 faces.
           </p>
-
           <p>
-            J’ai d’abord mis en place un environnement d’exécution bas niveau (initialisation matérielle, communication inter-cœurs, synchronisation) avant de développer et intégrer un ordonnanceur temps réel généré avec Heptagon/BZR. Le projet couvre à la fois la simulation sur PC pour valider le comportement temporel des tâches, puis le déploiement sur matériel réel, en adaptant le code aux contraintes de l’architecture ARM.
+            J’ai conçu la logique du jeu (métier), l’interface graphique en Java Swing, et les contrôleurs qui relient les actions utilisateur à la logique interne. Ce projet m’a permis de structurer un programme complet, de travailler avec des interfaces graphiques interactives, et d’implémenter des règles avancées de manière modulaire.
           </p>
-
           <p>
-            Il m’a permis d’approfondir la compréhension du temps réel, de la programmation concurrente, de la synchronisation multicœur et du lien entre modélisation formelle et implémentation bas niveau. Le projet a été réalisé en collaboration avec un camarade, en partageant la conception, le débogage et la validation sur carte.
+            Il m’a aussi appris à organiser mon code proprement, à penser en termes de réutilisabilité, et à anticiper les besoins futurs grâce à une conception extensible.
           </p>
-
         </div>
       </div>
 
