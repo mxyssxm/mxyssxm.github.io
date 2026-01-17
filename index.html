@@ -243,6 +243,18 @@
       font-weight: 400;
     }
 
+    /* Icônes (petites images) */
+    .icon{
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      vertical-align: -2px;
+    }
+
+    .pill .icon{
+      width: 14px;
+      height: 14px;
+    }
   </style>
 </head>
 
@@ -264,10 +276,25 @@
       <p class="subtitle">Étudiante en école d’ingénieur — Systèmes informatiques embarqués</p>
 
       <div class="topbar">
-        <span class="pill">📍 Paris, France</span>
-        <span class="pill">✉️ <a href="mailto:meyssem.soussou@gmail.com">meyssem.soussou@gmail.com</a></span>
-        <span class="pill">👾 <a href="https://github.com/mxyssxm" target="_blank" rel="noreferrer">github.com/mxyssxm</a></span>
-        <span class="pill">🔗 <a href="#" target="_blank" rel="noreferrer">LinkedIn : meyssem-soussou</a></span>
+        <span class="pill">
+          <img class="icon" src="assets/icons/pin.svg" alt="">
+          Paris, France
+        </span>
+
+        <span class="pill">
+          <img class="icon" src="assets/icons/mail.svg" alt="">
+          <a href="mailto:meyssem.soussou@gmail.com">meyssem.soussou@gmail.com</a>
+        </span>
+
+        <span class="pill">
+          <img class="icon" src="assets/icons/github.svg" alt="">
+          <a href="https://github.com/mxyssxm" target="_blank" rel="noreferrer">github.com/mxyssxm</a>
+          </span>
+
+        <span class="pill">
+          <img class="icon" src="assets/icons/linkedin.svg" alt="">
+          <a href="#" target="_blank" rel="noreferrer">LinkedIn : meyssem-soussou</a>
+        </span>
       </div>
     </header>
 
@@ -550,11 +577,18 @@
     <section id="contact">
       <h2>Contact</h2>
       <p>
-        ✉️ <a href="mailto:meyssem.soussou@gmail.com">meyssem.soussou@gmail.com</a><br>
-        👾 <a href="https://github.com/mxyssxm" target="_blank" rel="noreferrer">github.com/mxyssxm</a><br>
-        🔗 <a href="#" target="_blank" rel="noreferrer">LinkedIn : meyssem-soussou</a><br>
+        <img class="icon" src="assets/icons/mail.svg" alt="">
+        <a href="mailto:meyssem.soussou@gmail.com">meyssem.soussou@gmail.com</a><br>
+
+        <img class="icon" src="assets/icons/github.svg" alt="">
+        <a href="https://github.com/mxyssxm" target="_blank" rel="noreferrer">github.com/mxyssxm</a><br>
+
+        <img class="icon" src="assets/icons/linkedin.svg" alt="">
+        <a href="#" target="_blank" rel="noreferrer">LinkedIn : meyssem-soussou</a><br>
+
         📄 CV : <a href="#" target="_blank" rel="noreferrer">Télécharger</a>
       </p>
+
     </section>
 
     <footer>
