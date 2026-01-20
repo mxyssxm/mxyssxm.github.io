@@ -35,4 +35,4 @@ Ce site a été conçu comme un support complémentaire à mon CV, afin de fourn
 
 ---
 
-Merci pour votre visite :)
+Merci de votre visite :)
