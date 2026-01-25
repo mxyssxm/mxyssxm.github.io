@@ -26,10 +26,6 @@ Je suis étudiante en école d’ingénieur, spécialisée en **Systèmes Inform
 - CSS  
 - JavaScript  
 
-## Accéder au site
-Le portfolio est accessible à l’adresse suivante :  
-https://mxyssxm.github.io
-
 ## Objectif
 Ce site a été conçu comme un support complémentaire à mon CV, afin de fournir des informations plus détaillées sur mes projets et mon parcours.
 
