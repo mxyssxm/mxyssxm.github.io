@@ -1,5 +1,3 @@
-# mxyssxm.github.io
-
 # Portfolio
 
 Bienvenue sur mon portfolio en ligne.
