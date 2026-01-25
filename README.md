@@ -1,6 +1,6 @@
 # mxyssxm.github.io
 
-# Portfolio – Meyssem Soussou
+# Portfolio
 
 Bienvenue sur mon portfolio en ligne.
 
